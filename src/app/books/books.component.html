@@ -1,0 +1,27 @@
+
+
+<br>
+
+<div>
+
+  <table class="table table-striped text-center">
+    <thead class="thead-dark">
+    <tr>
+      <th>Nom</th>
+      <th>Auteur</th>
+      <th>Genre</th>
+      <th>Quantité disponible</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let b of books._embedded.books">
+      <td>{{b.name}}</td>
+      <td>{{b.author}}</td>
+      <td>{{b.genre}}</td>
+      <td>{{b.quantity}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+
