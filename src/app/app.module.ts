@@ -10,6 +10,10 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import {AdminBooksComponent} from './admin-books/admin-books.component';
 import { NewBookComponent } from './new-book/new-book.component';
+import { BookListComponent } from './book-list/book-list.component';
+import { SingleBookComponent } from './book-list/single-book/single-book.component';
+import { BookFormComponent } from './book-list/book-form/book-form.component';
+import { BookReserveComponent } from './book-list/book-reserve/book-reserve.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { NewBookComponent } from './new-book/new-book.component';
     AdminBooksComponent,
     AdminUsersComponent,
     LoginComponent,
-    NewBookComponent
+    NewBookComponent,
+    BookListComponent,
+    SingleBookComponent,
+    BookFormComponent,
+    BookReserveComponent
   ],
   imports: [
     BrowserModule,
