@@ -6,7 +6,7 @@ import {AuthenticationService} from './authentication.service';
   providedIn: 'root'
 })
 export class BooksService {
-  public host: string = 'http://localhost:9005';
+  public host = 'http://localhost:9005';
 
   constructor(private http: HttpClient, private authService: AuthenticationService) {
   }
