@@ -15,6 +15,12 @@ export class BooksService {
     return this.http.get(this.host + '/books');
   }
 
+  //new-0
+  getSinglebook(id: number){
+    console.log(this.host + '/books/' + id);
+    return this.http.get(this.host + '/books/' + id);
+  }
+
   getResources(url) {
     return this.http.get(url);
   }

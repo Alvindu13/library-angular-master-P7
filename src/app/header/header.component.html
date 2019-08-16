@@ -37,7 +37,7 @@
   </ul>
 
   <span class="float-right ml-auto">
-    <form class="form-inline" action="/action_page.php">
+    <form #f="ngForm" class="form-inline" (ngSubmit)="onSubmit(f)" novalidate>
         <input class="form-control mr-sm-2" type="text" placeholder="Search">
         <button class="btn btn-success" type="submit">Search</button>
     </form>
