@@ -11,7 +11,7 @@ import {Observable} from 'rxjs';
 })
 export class SingleBookComponent implements OnInit {
 
-  book;
+  book : Object;
 
   constructor(private route: ActivatedRoute,
               private booksService: BooksService,
@@ -28,7 +28,6 @@ export class SingleBookComponent implements OnInit {
         console.log(err);
       });
   }
-
 
   onBack() {
     this.router.navigate(['/books']);

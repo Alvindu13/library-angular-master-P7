@@ -1,12 +1,19 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {AuthenticationService} from './authentication.service';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BooksService {
   public host = 'http://localhost:9005';
+  public host2 = 'http://localhost:9005/books/selected/Titanic';
+  postUrl : string = "https://jsonplaceholder.typicode.com/posts";
+
+
+  searchOption = [];
+
 
   constructor(private http: HttpClient, private authService: AuthenticationService) {
   }
@@ -19,6 +26,11 @@ export class BooksService {
   getSinglebook(id: number){
     console.log(this.host + '/books/' + id);
     return this.http.get(this.host + '/books/' + id);
+  }
+
+  getBooksByBorrowerId(borrowerId: number){
+    console.log(this.host + '/books/user/' + borrowerId);
+    return this.http.get(this.host + '/books/user/' + borrowerId);
   }
 
   getResources(url) {
@@ -45,4 +57,5 @@ export class BooksService {
     const header = new HttpHeaders({'Authorization': 'Bearer ' + this.authService.jwt})
     return this.http.patch(url, data, {headers: header});
   }
+
 }

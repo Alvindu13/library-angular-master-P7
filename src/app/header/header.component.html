@@ -27,28 +27,22 @@
         Livres
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" routerLink="/books">Voir tous les livres</a>
-        <a class="dropdown-item" routerLink="/books/search">Chercher un livre</a>
+        <a class="dropdown-item" routerLink="/books">Accéder à la bibliothèque</a>
+        <a class="dropdown-item" routerLink="/books/view/search">Rechercher des livres</a>
         <a class="dropdown-item" routerLink="/adminProduits">Réserver un livre</a>
         <a class="dropdown-item" routerLink="/adminUsers">Voir mes livres</a>
       </div>
     </li>
-
   </ul>
-
-  <span class="float-right ml-auto">
-    <form #f="ngForm" class="form-inline" (ngSubmit)="onSubmit(f)" novalidate>
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-success" type="submit">Search</button>
-    </form>
-  </span>
-
 
   <ul class="nav navbar-nav ml-5">
     <li class="nav-item float-right ">
       <a *ngIf="!isAuthenticated()" class="nav-link" routerLink="/login">Login</a>
       <a *ngIf="isAuthenticated()" class="nav-link btn" (click) = "logout()">Logout</a>
-
     </li>
   </ul>
+
 </nav>
+
+
+
