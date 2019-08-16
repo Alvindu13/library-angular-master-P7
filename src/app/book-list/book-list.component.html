@@ -21,7 +21,7 @@
       <td>{{b.author}}</td>
       <td>{{b.genre}}</td>
       <td>{{b.quantity}}</td>
-      <td><button class="btn btn-success">Réserver</button></td>
+      <td><button class="btn btn-success" (click)="onReserve(b)" [disabled]="!b.available">Réserver</button></td>
     </tr>
     </tbody>
   </table>

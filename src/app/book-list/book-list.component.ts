@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {BooksService} from '../services/books.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
+import {Book} from '../models/book.model';
 
 @Component({
   selector: 'app-book-list',
@@ -11,6 +12,7 @@ import {HttpClient} from '@angular/common/http';
 export class BookListComponent implements OnInit {
 
   books;
+  book : Book;
 
   constructor(private booksService: BooksService, private route: ActivatedRoute, private router: Router, private http: HttpClient) {
 
@@ -25,14 +27,12 @@ export class BookListComponent implements OnInit {
       });
   }
 
-  onGetBooks() {
+  /**
+   * Fonction qui permet de réserver un livre
+   * Act1 => mettre available à false
+   * @param b
+   */
+  onReserve(b: Book) {
+    //this.book = this.b;
   }
-
-
-
-  /*onGetBooks(books) {
-    const url = books._links.books.href;
-    this.router.navigateByUrl('/products/' + btoa(url));
-  }*/
-
 }
