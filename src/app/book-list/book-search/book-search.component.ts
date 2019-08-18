@@ -14,12 +14,14 @@ export class BookSearchComponent implements OnInit {
   @ViewChild('bookSearchInput') bookSearchInput: ElementRef;
   apiResponse:any;
   isSearching:boolean;
+  isSuccess: boolean;
 
   constructor(
     private httpClient: HttpClient
   ) {
     this.isSearching = false;
     this.apiResponse = [];
+    this.isSuccess = true;
   }
 
   ngOnInit() {
@@ -41,6 +43,12 @@ export class BookSearchComponent implements OnInit {
         console.log('res', res);
         this.isSearching = false;
         this.apiResponse = res;
+        if(this.apiResponse.length === 0) {
+          this.isSuccess = false;
+        }
+        console.log('s', this.isSuccess);
+
+        console.log('tableau', this.apiResponse);
       }, ( err ) => {
         this.isSearching = false;
         console.log('error', err);
@@ -52,7 +60,7 @@ export class BookSearchComponent implements OnInit {
     if (term === '') {
       return of ([]);
     }
-    return this.httpClient.get('http://localhost:9005/books/selected/' + term );
+    return this.httpClient.get('http://localhost:9005/books/selected/' + term);
   }
 
 }

@@ -15,30 +15,34 @@
 
     </div>
   </div>
+
+
+
+
   <div class="row">
-    <ng-container *ngIf="apiResponse['Response'] == 'False'; else elseTemplate">
+      <ng-container  *ngIf="!isSuccess else elseTemplate">
 
-      <div class="col-12 text-center">
-        <div class="alert alert-danger" role="alert">
-          {{apiResponse['Error']}}
+        <div class="col-12 text-center">
+          <div class="alert alert-danger" role="alert">
+            <p>On n'a rien trouvé</p>
 
-        </div>
-      </div>
-
-    </ng-container>
-    <ng-template #elseTemplate>
-
-
-      <div class="col-3" *ngFor="let book of apiResponse">
-        <br>
-        <div class="card" style="margin:5px;">
-          <div class="card-body">
-            <h5 class="card-title">{{book.name}}</h5>
-            <p class="card-text">{{book.author}}</p>
           </div>
         </div>
-      </div>
 
-    </ng-template>
+      </ng-container>
+
+      <ng-template #elseTemplate>
+
+        <div class="col-3" *ngFor="let book of apiResponse">
+          <br>
+          <div class="card" style="margin:5px;">
+            <div class="card-body">
+              <h5 class="card-title">{{book.name}}</h5>
+              <p class="card-text">{{book.author}}</p>
+            </div>
+          </div>
+        </div>
+
+      </ng-template>
   </div>
 </div>

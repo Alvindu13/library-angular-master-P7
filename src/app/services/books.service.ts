@@ -8,11 +8,7 @@ import {Observable} from 'rxjs';
 })
 export class BooksService {
   public host = 'http://localhost:9005';
-  public host2 = 'http://localhost:9005/books/selected/Titanic';
-  postUrl : string = "https://jsonplaceholder.typicode.com/posts";
-
-
-  searchOption = [];
+  //public host2 = 'http://localhost:9005/books/selected/Titanic';
 
 
   constructor(private http: HttpClient, private authService: AuthenticationService) {
