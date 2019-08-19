@@ -1,3 +1,5 @@
+import {User} from './user.model';
+
 export class Book {
 
   id: bigint;
@@ -7,7 +9,8 @@ export class Book {
   available: boolean;
   isProlongation: boolean;
   //pas sûr peut-êetre dois je mettre un objet USER
-  borrower : Object;
+  borrower : string;
+  borrowDate: any;
 
   constructor(public name: string, public author: string) {
   }

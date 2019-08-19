@@ -22,6 +22,8 @@
       <td>{{b.genre}}</td>
       <td>{{b.quantity}}</td>
       <td><button class="btn btn-success" (click)="onReserve(b)" [disabled]="!b.available">Réserver</button></td>
+      <!--<td>{{b._links.borrower}}</td>-->
+
     </tr>
     </tbody>
   </table>
