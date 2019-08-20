@@ -10,7 +10,6 @@
       <th>Nom</th>
       <th>Auteur</th>
       <th>Genre</th>
-      <th>Quantité disponible</th>
       <th>Disponibilité</th>
 
     </tr>
@@ -20,7 +19,6 @@
       <td>{{b.name}}</td>
       <td>{{b.author}}</td>
       <td>{{b.genre}}</td>
-      <td>{{b.quantity}}</td>
       <td><button class="btn btn-success" (click)="onReserve(b)" [disabled]="!b.available">Réserver</button></td>
       <!--<td>{{b._links.borrower}}</td>-->
 

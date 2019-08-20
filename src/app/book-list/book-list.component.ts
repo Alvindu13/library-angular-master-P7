@@ -36,13 +36,14 @@ export class BookListComponent implements OnInit {
    */
   onReserve(b: Book) {
 
-    b.available = false;
+    /*b.available = false;
     b.borrower = 'http://localhost:9005/appUsers/selected/' + +this.authService.currentId;
-    b.borrowDate = new Date();
-    b.quantity = b.quantity - 1;
+    b.borrowDate = new Date();*/
+
+    b.available = false;
 
     const x = b.id.toString();
-    const url : string = 'http://localhost:9005/books/' + x;
+    const url : string = 'http://localhost:9005/books/' + this.authService.currentUser.username + '/reserve/' + x;
 
     //save update
     this.booksService.patchResources(url, b).subscribe();

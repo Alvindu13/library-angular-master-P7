@@ -7,6 +7,7 @@ export class Book {
   genre: string;
   quantity: number;
   available: boolean;
+  unvailable:boolean;
   isProlongation: boolean;
   //pas sûr peut-êetre dois je mettre un objet USER
   borrower : string;
