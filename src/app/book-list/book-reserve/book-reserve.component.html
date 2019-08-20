@@ -1,1 +1,31 @@
-<app-book-list></app-book-list>
+
+
+<br>
+
+<div>
+
+  <table class="table table-striped text-center">
+    <thead class="thead-dark">
+    <tr>
+      <th>Nom</th>
+      <th>Auteur</th>
+      <th>Genre</th>
+      <th>Quantité disponible</th>
+      <th>Prolonger votre réservation (disponible 1 fois seulement)</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let b of books">
+      <td>{{b.name}}</td>
+      <td>{{b.author}}</td>
+      <td>{{b.genre}}</td>
+      <td>{{b.quantity}}</td>
+      <td><button class="btn btn-outline-success">Prolonger</button></td>
+      <!--<td>{{b._links.borrower}}</td>-->
+
+    </tr>
+    </tbody>
+  </table>
+
+</div>

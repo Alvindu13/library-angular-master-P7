@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {BooksService} from '../../services/books.service';
+import {AuthenticationService} from '../../services/authentication.service';
 
 @Component({
   selector: 'app-book-reserve',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookReserveComponent implements OnInit {
 
-  constructor() { }
+  books;
+
+  constructor(private booksService: BooksService, private authService: AuthenticationService) { }
 
   ngOnInit() {
-  }
+    this.booksService.getBooksByBorrowerId()
+      .subscribe(data => {
+          console.log(data);
+          this.books = data;
+          console.log('books', this.books);
+      }, err => {
+          console.log(err);
+      });
+    }
 
 }

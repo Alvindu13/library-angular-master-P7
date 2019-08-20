@@ -24,9 +24,9 @@ export class BooksService {
     return this.http.get(this.host + '/books/' + id);
   }
 
-  getBooksByBorrowerId(borrowerId: number){
-    console.log(this.host + '/books/user/' + borrowerId);
-    return this.http.get(this.host + '/books/user/' + borrowerId);
+  getBooksByBorrowerId(){
+    console.log(this.host + '/books/user/' + this.authService.currentId);
+    return this.http.get(this.host + '/books/user/' + this.authService.currentId);
   }
 
   getResources(url) {

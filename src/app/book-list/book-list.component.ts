@@ -15,7 +15,6 @@ export class BookListComponent implements OnInit {
 
   books;
   book : Book;
-  user: User;
 
   constructor(private booksService: BooksService, private authService: AuthenticationService, private route: ActivatedRoute, private router: Router, private http: HttpClient) {
 
@@ -40,6 +39,7 @@ export class BookListComponent implements OnInit {
     b.available = false;
     b.borrower = 'http://localhost:9005/appUsers/selected/' + +this.authService.currentId;
     b.borrowDate = new Date();
+    b.quantity = b.quantity - 1;
 
     const x = b.id.toString();
     const url : string = 'http://localhost:9005/books/' + x;

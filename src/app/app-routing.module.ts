@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'books/new', component: BookFormComponent},
   {path: 'books/:id', component: SingleBookComponent},
   {path: 'books/view/search', component: BookSearchComponent},
-  {path: 'books/user/:borrowerId', component: BookReserveComponent}
+  {path: 'books/user/test', component: BookReserveComponent}
 ];
 
 @NgModule({
