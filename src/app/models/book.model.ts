@@ -10,7 +10,7 @@ export class Book {
   isProlongation: boolean;
   //pas sûr peut-êetre dois je mettre un objet USER
   borrower : string;
-  borrowDate: any;
+  borrowDate;
 
   constructor(public name: string, public author: string) {
   }

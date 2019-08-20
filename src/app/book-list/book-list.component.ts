@@ -37,26 +37,15 @@ export class BookListComponent implements OnInit {
    */
   onReserve(b: Book) {
 
-
     b.available = false;
     b.borrower = 'http://localhost:9005/appUsers/selected/' + +this.authService.currentId;
-    console.log(b.borrower);
-    //b.borrowDate.toLocaleString();
+    b.borrowDate = new Date();
 
-    //this.authService
     const x = b.id.toString();
     const url : string = 'http://localhost:9005/books/' + x;
 
-
-    //save book
+    //save update
     this.booksService.patchResources(url, b).subscribe();
 
-
-
-
-    //b.borrowerId = ?
-
-    //this.booksService.patchResources()
-    //this.book = this.b;
   }
 }
