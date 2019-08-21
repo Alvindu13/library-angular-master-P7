@@ -17,6 +17,8 @@ import { BookSearchComponent } from './book-list/book-search/book-search.compone
 import {MatAutocompleteModule, MatChipsModule, MatFormFieldModule, MatIconModule, MatInputModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HomePageComponent } from './home-page/home-page.component';
+import { FooterComponent } from './footer/footer.component';
+import {MDBBootstrapModule} from 'angular-bootstrap-md';
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     BookReserveComponent,
     HeaderComponent,
     BookSearchComponent,
-    HomePageComponent
+    HomePageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     MatAutocompleteModule,
     MatChipsModule,
     MatFormFieldModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MDBBootstrapModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
