@@ -15,8 +15,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let b of books._embedded.books">
-      <td>{{b.name}}</td>
+    <tr *ngFor="let b of books; let i = index">
+      <td ><a routerLink="{{i+1}}">{{b.name}}</a></td>
       <td>{{b.author}}</td>
       <td>{{b.genre}}</td>
       <td><button class="btn btn-success" (click)="onReserve(b)" [disabled]="!b.available">Réserver</button></td>
