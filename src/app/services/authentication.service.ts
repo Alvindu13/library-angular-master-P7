@@ -15,6 +15,7 @@ export class AuthenticationService {
   roles: Array<string>;
   userId: number;
   authenticated: boolean;
+  isAuth: boolean = false;
 
   constructor(private http: HttpClient) {}
 
@@ -35,6 +36,7 @@ export class AuthenticationService {
     const objJWT = jwtHelper.decodeToken(this.jwt);
     this.username = objJWT.obj;
     this.roles = objJWT.roles;
+    this.isAuth = true;
   }
 
   getUserByUsername() {
@@ -61,6 +63,7 @@ export class AuthenticationService {
 
   logout() {
     localStorage.removeItem('token');
+    this.isAuth = false;
     this.initParams();
   }
 

@@ -19,6 +19,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FooterComponent } from './footer/footer.component';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
+import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
+import {AuthGuard} from './services/auth-guard.service';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import {MDBBootstrapModule} from 'angular-bootstrap-md';
     HeaderComponent,
     BookSearchComponent,
     HomePageComponent,
-    FooterComponent
+    FooterComponent,
+    FourOhFourComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,7 @@ import {MDBBootstrapModule} from 'angular-bootstrap-md';
     BrowserAnimationsModule,
     MDBBootstrapModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
