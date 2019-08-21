@@ -52,7 +52,7 @@ import {AuthGuard} from './services/auth-guard.service';
     BrowserAnimationsModule,
     MDBBootstrapModule,
   ],
-  providers: [AuthGuard],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

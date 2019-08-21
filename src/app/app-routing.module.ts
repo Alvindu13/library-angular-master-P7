@@ -22,6 +22,8 @@ const routes: Routes = [
   {path: 'books/:id', component: SingleBookComponent},
   {path: 'books/view/search', component: BookSearchComponent},
   {path: 'books/user/test', component: BookReserveComponent},
+  { path: 'not-found', component: FourOhFourComponent },
+  { path: '**', redirectTo: 'not-found' }
 
 ];
 
