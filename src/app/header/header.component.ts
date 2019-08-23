@@ -10,9 +10,12 @@ import {BooksService} from '../services/books.service';
 })
 export class HeaderComponent implements OnInit {
 
+  userCurrentId;
 
+  constructor(private authService: AuthenticationService) {
+    this.userCurrentId = this.authService.currentId
+  }
 
-  constructor(private authService: AuthenticationService) { }
 
   ngOnInit() {
 

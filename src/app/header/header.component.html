@@ -18,14 +18,14 @@
     </li>
 
 
-    <li class="nav-item dropdown" >
+    <li *ngIf="isAuthenticated()" class="nav-item dropdown" >
       <a class="nav-link dropdown-toggle" href="#" id="" data-toggle="dropdown">
         Livres
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" routerLink="/books">Accéder à la bibliothèque</a>
         <a class="dropdown-item" routerLink="/books/view/search">Rechercher des livres</a>
-        <a class="dropdown-item" routerLink="/books/user/test">Voir mes livres</a>
+        <a class="dropdown-item" routerLink="/books/user/reserve">Voir mes livres</a>
       </div>
     </li>
   </ul>

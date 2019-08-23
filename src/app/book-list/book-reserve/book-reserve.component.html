@@ -11,6 +11,7 @@
       <th>Auteur</th>
       <th>Genre</th>
       <th>Quantité disponible</th>
+      <th>Date de réservation</th>
       <th>Prolonger votre réservation (disponible 1 fois seulement)</th>
 
     </tr>
@@ -21,7 +22,8 @@
       <td>{{b.author}}</td>
       <td>{{b.genre}}</td>
       <td>{{b.quantity}}</td>
-      <td><button class="btn btn-outline-success">Prolonger</button></td>
+      <td>{{b.borrowDate}}</td>
+      <td><button class="btn btn-outline-success" (click)="onExtend(b)">Prolonger</button></td>
       <!--<td>{{b._links.borrower}}</td>-->
 
     </tr>

@@ -18,19 +18,22 @@ export class BooksService {
     return this.http.get(this.host + '/books');
   }
 
+
+
   //new-0
   getSinglebook(id: number){
     console.log(this.host + '/books/' + id);
     return this.http.get(this.host + '/books/' + id);
   }
 
-  getBooksByBorrowerId(){
-    console.log(this.host + '/books/user/' + this.authService.currentId);
-    return this.http.get(this.host + '/books/user/' + this.authService.currentId);
+  getBooksByBorrowerUsername(){
+    const header = new HttpHeaders({'Authorization': 'Bearer ' + this.authService.jwt})
+    return this.http.get(this.host + '/books/user');
   }
 
   getResources(url) {
-    return this.http.get(url);
+    const header = new HttpHeaders({'Authorization': 'Bearer ' + this.authService.jwt})
+    return this.http.get(url,{headers: header});
   }
 
   deleteResources(url) {

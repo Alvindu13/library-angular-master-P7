@@ -39,9 +39,9 @@ export class AuthenticationService {
     this.isAuth = true;
   }
 
-  getUserByUsername() {
-    console.log(this.host2 + '/appUsers/selected/' + this.username);
-    return this.http.get(this.host2 + '/appUsers/selected/' + this.username);
+  getUserByUsername(username: string) {
+    console.log(this.host2 + '/appUsers/selected/' + username);
+    return this.http.get(this.host2 + '/appUsers/selected/' + username);
   }
 
   isAdmin() {

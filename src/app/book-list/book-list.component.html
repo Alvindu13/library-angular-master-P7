@@ -4,21 +4,23 @@
 
 <div>
 
-  <table class="table table-striped text-center">
+  <table class="table table-striped text-center table-bordered table-hover table-active">
     <thead class="thead-dark">
     <tr>
       <th>Nom</th>
       <th>Auteur</th>
       <th>Genre</th>
+      <th>Nomble d'exemplaire</th>
       <th>Disponibilité</th>
 
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let b of books; let i = index">
-      <td ><a routerLink="{{i+1}}">{{b.name}}</a></td>
+      <td ><a routerLink="/books/{{i+1}}">{{b.name}}</a></td>
       <td>{{b.author}}</td>
       <td>{{b.genre}}</td>
+      <td>XXX</td>
       <td><button class="btn btn-success" (click)="onReserve(b)" [disabled]="!b.available">Réserver</button></td>
       <!--<td>{{b._links.borrower}}</td>-->
 

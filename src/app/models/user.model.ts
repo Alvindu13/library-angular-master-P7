@@ -1,5 +1,10 @@
 export class User {
 
-  constructor(public id:number, public username: string) {
+  id: number;
+  username:string;
+  roles:any;
+
+
+  constructor(id:number,username: string) {
   }
 }
