@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {BooksService} from '../services/books.service';
+import {HttpService} from '../services/http.service';
 
 @Component({
   selector: 'app-admin-books',

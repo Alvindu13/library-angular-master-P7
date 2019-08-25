@@ -1,10 +1,9 @@
 export class User {
 
   id: number;
-  username:string;
   roles:any;
 
 
-  constructor(id:number,username: string) {
+  constructor(public username:string, public password: string, public confirmedPassword:string) {
   }
 }

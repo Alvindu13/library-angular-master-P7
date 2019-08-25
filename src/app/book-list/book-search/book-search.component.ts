@@ -1,5 +1,5 @@
 import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
-import {BooksService} from '../../services/books.service';
+import {HttpService} from '../../services/http.service';
 import {HttpClient} from '@angular/common/http';
 import {fromEvent, of} from 'rxjs';
 import {debounceTime, distinctUntilChanged, filter, map} from 'rxjs/operators';

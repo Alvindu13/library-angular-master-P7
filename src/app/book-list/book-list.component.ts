@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {BooksService} from '../services/books.service';
+import {HttpService} from '../services/http.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {Book} from '../models/book.model';
@@ -16,12 +16,12 @@ export class BookListComponent implements OnInit {
   books;
   book : Book;
 
-  constructor(private booksService: BooksService, private authService: AuthenticationService, private route: ActivatedRoute, private router: Router, private http: HttpClient) {
+  constructor(private httpService: HttpService, private authService: AuthenticationService, private route: ActivatedRoute, private router: Router, private http: HttpClient) {
 
   }
 
   ngOnInit() {
-    this.booksService.getAllBooks()
+    this.httpService.getAllBooks()
       .subscribe( data => {
         this.books = data;
       }, err => {
@@ -41,10 +41,9 @@ export class BookListComponent implements OnInit {
     b.available = false;
 
     const x = b.id.toString();
-    const url : string = 'http://localhost:9005/books/' + b.id.toString() + '/reserve';
-
+    const url : string = 'http://localhost:9005/books/' + b.id.toString() + '/reserve'
     //save update
-    this.booksService.patchResources(url, b).subscribe();
+    this.httpService.patchResources(url, b).subscribe();
 
   }
 }

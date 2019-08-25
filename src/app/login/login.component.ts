@@ -12,9 +12,6 @@ import {Subscription} from 'rxjs';
 export class LoginComponent implements OnInit {
 
   bookSubscription: Subscription;
-  //@Input() userName:string;
-
-
 
   constructor(private authService: AuthenticationService, private router: Router) { }
 
