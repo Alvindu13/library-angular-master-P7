@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from '../services/authentication.service';
 import {BookSearchComponent} from '../book-list/book-search/book-search.component';
-import {BooksService} from '../services/books.service';
+import {HttpService} from '../services/http.service';
 
 @Component({
   selector: 'app-header',
@@ -29,8 +29,5 @@ export class HeaderComponent implements OnInit {
     this.authService.logout();
   }
 
-  onGetBooksByBorrowerId(borrowerId: number) {
-
-  }
 
 }

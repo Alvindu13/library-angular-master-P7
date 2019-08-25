@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {BooksService} from '../../services/books.service';
+import {HttpService} from '../../services/http.service';
 import {Router} from '@angular/router';
 import {Book} from '../../models/book.model';
 import {environment} from '../../../environments/environment';
@@ -15,7 +15,7 @@ export class BookFormComponent implements OnInit {
   public host : string = environment.apiUrl + '/books';
 
   constructor(private formBuilder: FormBuilder,
-              private booksService: BooksService,
+              private httpService: HttpService,
               private router: Router) { }
 
   ngOnInit() {
@@ -36,10 +36,8 @@ export class BookFormComponent implements OnInit {
     const author = this.bookForm.get('author').value;
     const genre = this.bookForm.get('genre').value;
     const price = this.bookForm.get('price').value;
-    console.log(title, author, genre, price);
     const newBook = new Book(title, author, genre, price);
-    console.log(newBook);
-    this.booksService.postResources(this.host, newBook).subscribe();
+    this.httpService.postResources(this.host, newBook).subscribe();
     this.router.navigate(['/books'])
   }
 

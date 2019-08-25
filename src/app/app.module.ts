@@ -29,6 +29,7 @@ import { FooterComponent } from './footer/footer.component';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import {AuthGuard} from './services/auth-guard.service';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import {AuthGuard} from './services/auth-guard.service';
     BookSearchComponent,
     HomePageComponent,
     FooterComponent,
-    FourOhFourComponent
+    FourOhFourComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

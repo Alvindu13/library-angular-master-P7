@@ -5,26 +5,20 @@
       <h1>Bibliothèques</h1>
       <input type="text" #bookSearchInput class="form-control"
              placeholder="Rechercher avec le titre d'un livre" />
-
     </div>
   </div>
   <div class="row" *ngIf="isSearching">
     <div class="col-12 text-center">
-
-      <h4>Searching ... </h4>
-
+      <h4> Recherche en cours ... </h4>
     </div>
   </div>
 
-
-
-
-  <div class="row">
+  <div class="row mt-5">
       <ng-container  *ngIf="!isSuccess else elseTemplate">
 
         <div class="col-12 text-center">
           <div class="alert alert-danger" role="alert">
-            <p>On n'a rien trouvé</p>
+            <p>Aucun livre ne correspond à cette recherche</p>
 
           </div>
         </div>

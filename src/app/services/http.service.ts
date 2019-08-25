@@ -9,7 +9,7 @@ import {environment} from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class BooksService {
+export class HttpService {
 
   public host : string = environment.apiUrl;
 
@@ -25,6 +25,10 @@ export class BooksService {
     return this.http.get(this.host + '/books/' + id);
   }
 
+  register(url, data) {
+    return this.http.post(url, data);
+  }
+
   getResources(url) {
     const header = new HttpHeaders({'Authorization': 'Bearer ' + this.authService.jwt})
     return this.http.get(url,{headers: header});
@@ -34,6 +38,7 @@ export class BooksService {
     const header = new HttpHeaders({'Authorization': 'Bearer ' + this.authService.jwt})
     return this.http.delete(url, {headers: header});
   }
+
 
   postResources(url, data) {
     const header = new HttpHeaders({'Authorization': 'Bearer ' + this.authService.jwt})

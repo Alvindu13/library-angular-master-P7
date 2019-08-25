@@ -12,11 +12,13 @@ import {HomePageComponent} from './home-page/home-page.component';
 import {FourOhFourComponent} from './four-oh-four/four-oh-four.component';
 import {AuthGuard} from './services/auth-guard.service';
 import {HeaderComponent} from './header/header.component';
+import {RegisterComponent} from './register/register.component';
 
 
 const routes: Routes = [
   { path: '', component: HeaderComponent },
   {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
   {path: 'books', canActivate: [AuthGuard], component: BookListComponent},
   {path: 'home', component: HomePageComponent},
   {path: 'books/new', component: BookFormComponent},
