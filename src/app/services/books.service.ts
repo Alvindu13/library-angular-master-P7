@@ -2,33 +2,27 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {AuthenticationService} from './authentication.service';
 import {Observable} from 'rxjs';
+import {environment} from '../../environments/environment';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class BooksService {
-  public host = 'http://localhost:9005';
-  //public host2 = 'http://localhost:9005/books/selected/Titanic';
 
+  public host : string = environment.apiUrl;
 
   constructor(private http: HttpClient, private authService: AuthenticationService) {
   }
 
   getAllBooks() {
-    return this.http.get(this.host + '/books');
+    return this.http.get( this.host + '/books');
   }
 
-
-
-  //new-0
   getSinglebook(id: number){
     console.log(this.host + '/books/' + id);
     return this.http.get(this.host + '/books/' + id);
-  }
-
-  getBooksByBorrowerUsername(){
-    const header = new HttpHeaders({'Authorization': 'Bearer ' + this.authService.jwt})
-    return this.http.get(this.host + '/books/user');
   }
 
   getResources(url) {
@@ -40,7 +34,6 @@ export class BooksService {
     const header = new HttpHeaders({'Authorization': 'Bearer ' + this.authService.jwt})
     return this.http.delete(url, {headers: header});
   }
-
 
   postResources(url, data) {
     const header = new HttpHeaders({'Authorization': 'Bearer ' + this.authService.jwt})

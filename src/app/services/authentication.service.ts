@@ -2,25 +2,23 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {JwtHelperService} from '@auth0/angular-jwt';
 import {User} from '../models/user.model';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-  host2: string = 'http://localhost:9005';
+  host: string = environment.apiUrl;
   jwt: string;
   username: string;
-  currentUser;
   currentId:number;
   roles: Array<string>;
-  userId: number;
-  authenticated: boolean;
   isAuth: boolean = false;
 
   constructor(private http: HttpClient) {}
 
   login(data) {
-    return this.http.post(this.host2 + '/login', data, {observe : 'response'});
+    return this.http.post(this.host + '/login', data, {observe : 'response'});
   }
 
   saveToken(jwt: string) {
@@ -40,8 +38,8 @@ export class AuthenticationService {
   }
 
   getUserByUsername(username: string) {
-    console.log(this.host2 + '/appUsers/selected/' + username);
-    return this.http.get(this.host2 + '/appUsers/selected/' + username);
+    console.log(this.host + '/appUsers/selected/' + username);
+    return this.http.get(this.host + '/appUsers/selected/' + username);
   }
 
   isAdmin() {

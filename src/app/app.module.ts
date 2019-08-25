@@ -14,7 +14,15 @@ import { BookFormComponent } from './book-list/book-form/book-form.component';
 import { BookReserveComponent } from './book-list/book-reserve/book-reserve.component';
 import { HeaderComponent } from './header/header.component';
 import { BookSearchComponent } from './book-list/book-search/book-search.component';
-import {MatAutocompleteModule, MatChipsModule, MatFormFieldModule, MatIconModule, MatInputModule} from '@angular/material';
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule
+} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FooterComponent } from './footer/footer.component';
@@ -50,7 +58,7 @@ import {AuthGuard} from './services/auth-guard.service';
     MatChipsModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
-    MDBBootstrapModule,
+    MDBBootstrapModule, MatButtonModule, MatCheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
