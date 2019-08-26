@@ -32,13 +32,9 @@ export class AuthenticationService {
   private loadUserIdentity() {
     const jwtHelper = new JwtHelperService();
     const objJWT = jwtHelper.decodeToken(this.jwt);
-    //this.username = objJWT.obj;
+    this.username = objJWT.sub;
     this.roles = objJWT.roles;
     this.isAuth = true;
-  }
-
-  getUserByUsername(username: string) {
-    return this.http.get(this.host + '/appUsers/selected/' + username);
   }
 
   isAdmin() {

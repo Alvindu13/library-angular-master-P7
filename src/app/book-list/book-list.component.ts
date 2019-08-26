@@ -36,14 +36,8 @@ export class BookListComponent implements OnInit {
    * @param b
    */
   onReserve(b: Book) {
-
-
     b.available = false;
-
-    const x = b.id.toString();
     const url : string = 'http://localhost:9005/books/' + b.id.toString() + '/reserve'
-    //save update
     this.httpService.patchResources(url, b).subscribe();
-
   }
 }

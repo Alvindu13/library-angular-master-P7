@@ -15,26 +15,4 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.authService.loadToken();
   }
-
-  onBooks() {
-    this.router.navigate(['books']);
-  }
-
-  isAdmin() {
-    return this.authService.isAdmin();
-  }
-
-  isUser() {
-    return this.authService.isUser();
-  }
-
-  isAuthenticated() {
-    return this.authService.isAuthenticated();
-    console.log(this.authService.isAuthenticated());
-  }
-
-
-  logout() {
-    this.authService.logout();
-  }
 }
