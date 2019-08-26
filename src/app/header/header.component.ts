@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit {
     this.userCurrentId = this.authService.currentId
   }
 
-
   ngOnInit() {
 
   }
