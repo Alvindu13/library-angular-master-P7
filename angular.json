@@ -29,7 +29,6 @@
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
-              "src/assets/hover.js",
               "node_modules/bootstrap/dist/js/bootstrap.js"]
           },
           "configurations": {
