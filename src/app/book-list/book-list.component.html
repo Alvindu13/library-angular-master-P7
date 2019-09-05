@@ -17,11 +17,11 @@
     </thead>
     <tbody>
     <tr *ngFor="let b of books; let i = index">
-      <td ><a routerLink="/books/{{i+1}}">{{b.name}}</a></td>
-      <td>{{b.author}}</td>
+      <td><a routerLink="/books/{{i+1}}">{{b.name}}</a></td>
+      <td> {{b.author}}</td>
       <td>{{b.genre}}</td>
-      <td>XXX</td>
-      <td><button class="btn btn-success" (click)="onReserve(b)" [disabled]="!b.available">Réserver</button></td>
+      <td>{{counts[b.name+b.author]}}</td>
+      <td><button class="btn btn-success" (click)="onReserve(b)" [disabled]="!b.available && b.borrower.username == currentUsername">Réserver</button></td>
       <!--<td>{{b._links.borrower}}</td>-->
 
     </tr>

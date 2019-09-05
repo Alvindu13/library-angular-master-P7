@@ -14,16 +14,28 @@ import {AuthenticationService} from '../services/authentication.service';
 export class BookListComponent implements OnInit {
 
   books;
+  counts = {};
   book : Book;
+  currentUsername;
+
 
   constructor(private httpService: HttpService, private authService: AuthenticationService, private route: ActivatedRoute, private router: Router, private http: HttpClient) {
-
+    this.currentUsername = this.authService.username;
   }
 
   ngOnInit() {
     this.httpService.getAllBooks()
       .subscribe( data => {
         this.books = data;
+
+        this.books.sort((a,b) => (a.name + a.author).localeCompare(b.name + b.author) );
+        console.log(this.books);
+        this.books.forEach((x) => {
+          let id= x.name + x.author;
+          this.counts[id] = (this.counts[id] || 0)+1; }
+          );
+
+        console.log(this.counts);
       }, err => {
         console.log(err);
       });
@@ -35,9 +47,11 @@ export class BookListComponent implements OnInit {
    * Act1 => mettre available à false
    * @param b
    */
-  onReserve(b: Book) {
+  onReserve(b) {
     b.available = false;
+    b.borrower.username = this.currentUsername;
     const url : string = 'http://localhost:9005/books/' + b.id.toString() + '/reserve'
     this.httpService.patchResources(url, b).subscribe();
   }
+
 }
